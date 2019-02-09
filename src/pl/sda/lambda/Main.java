@@ -56,5 +56,18 @@ public class Main {
                 .filter(f -> f.getPrice() > 50)
                 .filter(f -> f.getTitle().length() > 5)
                 .collect(Collectors.toList());
+
+        movieList.forEach(p -> System.out.println((p.getTitle() + p.getPrice())));
+        movieList.forEach(System.out::println);
+
+        //zwróć liste tytułów filmów, których getPrice > 10 i < 30 używając filter i map
+
+        List<String> movieList2 = movies.stream()
+                .filter(f -> f.getPrice() > 10)
+                .filter(f -> f.getPrice() < 30)
+                .map(d -> d.getTitle())
+                .collect(Collectors.toList());
+
+        movieList2.forEach(z -> System.out.println(z));
     }
 }
